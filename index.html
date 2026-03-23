@@ -1,0 +1,2271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>PhishGuard</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
+  <link rel="stylesheet" href="css/animate.css">
+
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
+  <link rel="stylesheet" href="css/owl.theme.default.min.css">
+  <link rel="stylesheet" href="css/magnific-popup.css">
+
+  <link rel="stylesheet" href="css/aos.css">
+
+  <link rel="stylesheet" href="css/ionicons.min.css">
+
+  <link rel="stylesheet" href="css/flaticon.css">
+  <link rel="stylesheet" href="css/icomoon.css">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .brand-logo {
+      display: inline-block;
+      font-family: "Montserrat", "Poppins", sans-serif;
+      font-size: 25px;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: transparent !important;
+      background: linear-gradient(90deg, #a5f3fc 0%, #67e8f9 30%, #22d3ee 62%, #0ea5e9 82%, #0369a1 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      transition: transform 0.25s ease, letter-spacing 0.25s ease, filter 0.25s ease;
+    }
+
+    .ftco-navbar-light .navbar-brand.brand-logo,
+    .ftco-navbar-light.scrolled .navbar-brand.brand-logo {
+      color: transparent !important;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .ftco-navbar-light .navbar-nav .nav-item a[href="checker.html"],
+    .ftco-navbar-light .navbar-nav .nav-item.active a[href="checker.html"] {
+      color: #ef4444 !important;
+    }
+
+    .ftco-navbar-light .navbar-nav .nav-item a[href="checker.html"]:hover,
+    .ftco-navbar-light .navbar-nav .nav-item a[href="checker.html"]:focus {
+      color: #b91c1c !important;
+    }
+
+    .heading-section h1.big {
+      transition: none;
+    }
+
+    .heading-section h1.big .big-focus {
+      color: inherit;
+      transition: none;
+    }
+
+    .heading-section h1.big .big-rest {
+      color: rgba(14, 165, 233, 0.42);
+    }
+
+    .heading-section h1.big.big-snap-active .big-focus {
+      color: rgba(125, 211, 252, 0.58) !important;
+      text-shadow: 0 0 8px rgba(56, 189, 248, 0.2), 0 0 16px rgba(96, 165, 250, 0.14);
+      transform: translateY(0);
+    }
+
+    .about-key {
+      color: inherit;
+      font-weight: inherit;
+      transition: color 0.18s ease, text-shadow 0.18s ease;
+    }
+
+    .about-section-title {
+      color: #e0f2fe;
+      position: relative;
+      z-index: 2;
+      margin-top: -8px;
+    }
+
+    .about-big-blue {
+      text-align: center;
+      position: relative;
+      top: 18px;
+    }
+
+    .heading-section.big-content-active .about-key {
+      color: rgba(224, 242, 254, 0.88);
+      text-shadow: 0 0 6px rgba(125, 211, 252, 0.2);
+    }
+
+    .brand-logo:hover {
+      letter-spacing: 0.07em;
+      transform: translateY(-1px);
+      filter: brightness(1.15);
+    }
+
+    .theme-toggle-wrap {
+      margin-left: 20px;
+      display: flex;
+      align-items: center;
+    }
+
+    .theme-toggle-btn {
+      border: 0;
+      background: transparent;
+      padding: 0;
+    }
+
+    .theme-toggle-track {
+      width: 62px;
+      height: 32px;
+      border-radius: 999px;
+      border: 1px solid rgba(125, 211, 252, 0.45);
+      background: rgba(8, 47, 73, 0.55);
+      display: inline-flex;
+      align-items: center;
+      padding: 3px;
+      transition: background 0.25s ease, border-color 0.25s ease;
+    }
+
+    .theme-toggle-thumb {
+      width: 24px;
+      height: 24px;
+      border-radius: 999px;
+      background: #e0f2fe;
+      color: #0f172a;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transform: translateX(0);
+      transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease;
+    }
+
+    .theme-icon-sun,
+    .theme-icon-moon {
+      font-size: 13px;
+      line-height: 1;
+    }
+
+    .theme-icon-sun {
+      display: none;
+    }
+
+    .theme-toggle-btn:hover .theme-toggle-track,
+    .theme-toggle-btn:focus .theme-toggle-track {
+      background: rgba(14, 116, 144, 0.8);
+    }
+
+    .theme-toggle-btn:focus {
+      outline: none;
+    }
+
+    .theme-toggle-btn:focus .theme-toggle-track {
+      box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.25);
+    }
+
+    .visually-hidden {
+      position: absolute !important;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    @media (max-width: 767.98px) {
+      .brand-logo {
+        font-size: 20px;
+        letter-spacing: 0.04em;
+      }
+
+      .theme-toggle-wrap {
+        margin: 10px 0 0;
+      }
+    }
+
+    .security-dashboard {
+      border: 1px solid rgba(56, 189, 248, 0.22);
+      background: radial-gradient(circle at top left, rgba(14, 165, 233, 0.14), rgba(10, 12, 20, 0.94) 55%);
+      border-radius: 20px;
+      padding: 28px;
+      box-shadow: 0 22px 45px rgba(2, 6, 23, 0.45);
+    }
+
+    .sd-metric {
+      background: rgba(15, 23, 42, 0.84);
+      border: 1px solid rgba(125, 211, 252, 0.2);
+      border-radius: 14px;
+      padding: 16px;
+      height: 100%;
+    }
+
+    .sd-metric .label {
+      color: rgba(186, 230, 253, 0.9);
+      letter-spacing: 0.04em;
+      font-size: 12px;
+      text-transform: uppercase;
+    }
+
+    .sd-metric .value {
+      font-size: 30px;
+      font-weight: 700;
+      line-height: 1.1;
+      color: #e0f2fe;
+      margin: 8px 0 2px;
+    }
+
+    .sd-metric .note {
+      margin: 0;
+      color: rgba(125, 211, 252, 0.82);
+      font-size: 13px;
+    }
+
+    .sd-card {
+      background: rgba(15, 23, 42, 0.72);
+      border: 1px solid rgba(125, 211, 252, 0.16);
+      border-radius: 14px;
+      padding: 18px;
+      height: 100%;
+    }
+
+    .sd-card h3 {
+      font-size: 17px;
+      color: #bae6fd;
+    }
+
+    .sd-chart {
+      display: flex;
+      align-items: flex-end;
+      gap: 10px;
+      height: 180px;
+    }
+
+    .sd-bar {
+      flex: 1;
+      min-width: 0;
+      background: linear-gradient(to top, rgba(14, 165, 233, 0.95), rgba(34, 211, 238, 0.55));
+      border-radius: 8px 8px 3px 3px;
+      position: relative;
+      height: 0;
+      transition: height 1.1s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .sd-bar span {
+      position: absolute;
+      bottom: -22px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 11px;
+      color: rgba(186, 230, 253, 0.84);
+    }
+
+    .sd-donut {
+      width: 170px;
+      height: 170px;
+      margin: 10px auto 14px;
+      position: relative;
+      --clean-angle: 0deg;
+      border-radius: 50%;
+      background: conic-gradient(#22d3ee 0deg var(--clean-angle), rgba(239, 68, 68, 0.9) var(--clean-angle) 360deg);
+    }
+
+    .sd-donut::after {
+      content: "";
+      position: absolute;
+      inset: 20px;
+      border-radius: 50%;
+      background: rgba(15, 23, 42, 0.98);
+      border: 1px solid rgba(125, 211, 252, 0.18);
+    }
+
+    .sd-donut-label {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      color: #e0f2fe;
+      z-index: 2;
+    }
+
+    .sd-donut-number {
+      min-width: 32px;
+      text-align: right;
+    }
+
+    .sd-legend {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .sd-legend li {
+      color: rgba(224, 242, 254, 0.84);
+      font-size: 13px;
+      margin-bottom: 7px;
+    }
+
+    .sd-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      display: inline-block;
+      margin-right: 8px;
+    }
+
+    .sd-dot.safe {
+      background: #22d3ee;
+    }
+
+    .sd-dot.threat {
+      background: #ef4444;
+    }
+
+    .sd-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .sd-table th,
+    .sd-table td {
+      padding: 9px 6px;
+      font-size: 13px;
+      border-bottom: 1px solid rgba(125, 211, 252, 0.12);
+    }
+
+    .sd-table th {
+      color: rgba(186, 230, 253, 0.9);
+      font-weight: 600;
+    }
+
+    .sd-table td {
+      color: rgba(224, 242, 254, 0.82);
+    }
+
+    .sd-table tbody tr {
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity 0.35s ease, transform 0.35s ease;
+    }
+
+    .security-dashboard.is-live .sd-table tbody tr {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .sd-status {
+      font-size: 12px;
+      font-weight: 600;
+      padding: 3px 9px;
+      border-radius: 999px;
+    }
+
+    .sd-status.clean {
+      background: rgba(34, 197, 94, 0.16);
+      color: #86efac;
+    }
+
+    .sd-status.blocked {
+      background: rgba(239, 68, 68, 0.16);
+      color: #fca5a5;
+    }
+
+    .sd-status.suspicious {
+      background: rgba(250, 204, 21, 0.16);
+      color: #fde68a;
+    }
+
+    .support-link {
+      color: #ef4444;
+      font-weight: 600;
+    }
+
+    .support-link:hover,
+    .support-link:focus {
+      color: #b91c1c;
+    }
+
+    .chat-link-animated {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 5px 11px 5px 8px;
+      border: 1px solid rgba(239, 68, 68, 0.5);
+      border-radius: 999px;
+      text-decoration: none;
+      position: relative;
+      transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+      animation: chatLinkPulse 2s ease-in-out infinite;
+    }
+
+    .chat-link-animated:hover,
+    .chat-link-animated:focus {
+      transform: translateY(-1px);
+      border-color: rgba(239, 68, 68, 0.72);
+      box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.18);
+      text-decoration: none;
+    }
+
+    .chat-link-animated .chat-link-bot {
+      width: 20px;
+      height: 16px;
+      border-radius: 6px;
+      background: rgba(239, 68, 68, 0.16);
+      border: 1px solid rgba(239, 68, 68, 0.7);
+      position: relative;
+      flex: 0 0 auto;
+    }
+
+    .chat-link-animated .chat-link-bot::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: -6px;
+      width: 2px;
+      height: 6px;
+      transform: translateX(-50%);
+      background: rgba(239, 68, 68, 0.78);
+    }
+
+    .chat-link-animated .chat-link-bot::after {
+      content: "";
+      position: absolute;
+      left: 4px;
+      top: 5px;
+      width: 3px;
+      height: 3px;
+      border-radius: 50%;
+      background: #ef4444;
+      box-shadow: 9px 0 0 #ef4444, 4.5px 5px 0 -1px rgba(239, 68, 68, 0.9);
+    }
+
+    .chat-link-animated .chat-link-text {
+      line-height: 1;
+    }
+
+    @keyframes chatLinkPulse {
+
+      0%,
+      100% {
+        box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.0);
+      }
+
+      50% {
+        box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.12);
+      }
+    }
+
+    .ftco-hireme.phishguard-cta {
+      position: relative;
+      background-position: center;
+      background-size: cover;
+      overflow: hidden;
+    }
+
+    .ftco-hireme.phishguard-cta::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(2, 6, 23, 0.78) 0%, rgba(2, 6, 23, 0.88) 55%, rgba(2, 6, 23, 0.94) 100%);
+      z-index: 0;
+    }
+
+    .ftco-hireme.phishguard-cta .container {
+      position: relative;
+      z-index: 1;
+    }
+
+    .ftco-hireme.phishguard-cta h2 {
+      color: #f8fbff;
+    }
+
+    .ftco-hireme.phishguard-cta h2 span {
+      color: #22d3ee;
+    }
+
+    .ftco-hireme.phishguard-cta p {
+      color: rgba(224, 242, 254, 0.9);
+    }
+
+    .support-layout {
+      align-items: flex-start;
+    }
+
+    .support-left h3 {
+      color: #dbeafe;
+      font-size: 36px;
+      line-height: 1.06;
+      margin-bottom: 16px;
+    }
+
+    .support-left p {
+      color: rgba(191, 219, 254, 0.9);
+      font-size: 18px;
+      line-height: 1.5;
+    }
+
+    .support-faq-list {
+      border-top: 1px solid rgba(125, 211, 252, 0.2);
+    }
+
+    .support-faq-item {
+      border-bottom: 1px solid rgba(125, 211, 252, 0.2);
+    }
+
+    .support-faq-btn {
+      width: 100%;
+      border: 0;
+      background: transparent;
+      color: #e0f2fe;
+      text-align: left;
+      font-size: 26px;
+      font-weight: 600;
+      line-height: 1.2;
+      padding: 18px 0;
+    }
+
+    .support-faq-btn .toggle {
+      float: right;
+      color: #67e8f9;
+      font-size: 24px;
+      line-height: 1;
+    }
+
+    .support-faq-body {
+      color: rgba(191, 219, 254, 0.9);
+      font-size: 17px;
+      line-height: 1.7;
+      padding: 0 0 18px;
+    }
+
+    .support-faq-body ul {
+      margin: 12px 0 0;
+      padding-left: 22px;
+    }
+
+    .support-contact-wrap {
+      align-items: stretch;
+    }
+
+    .support-contact-info {
+      padding: 10px 10px 10px 0;
+      height: 100%;
+    }
+
+    .support-contact-info h3 {
+      color: #e0f2fe;
+      margin-bottom: 10px;
+    }
+
+    .support-contact-info p {
+      color: rgba(191, 219, 254, 0.9);
+      margin-bottom: 12px;
+    }
+
+    .support-contact-info a {
+      color: #ef4444;
+      font-weight: 600;
+    }
+
+    .support-contact-info a:hover,
+    .support-contact-info a:focus {
+      color: #b91c1c;
+    }
+
+    .support-contact-form {
+      background: transparent;
+      border: 0;
+      box-shadow: none;
+    }
+
+    .support-contact-form .form-control {
+      background: rgba(255, 255, 255, 0.95);
+      border: 1px solid rgba(15, 23, 42, 0.28);
+      color: #0f172a;
+    }
+
+    .support-contact-form .form-control::placeholder {
+      color: #000000 !important;
+    }
+
+    .support-contact-form .form-control:focus {
+      border-color: rgba(56, 189, 248, 0.6);
+      box-shadow: 0 0 0 0.2rem rgba(56, 189, 248, 0.18);
+    }
+
+    .support-contact-status {
+      margin-top: 14px;
+      font-size: 14px;
+      color: #e2e8f0;
+    }
+
+    .support-contact-status.is-error {
+      color: #fecaca;
+    }
+
+    .support-contact-status.is-success {
+      color: #86efac;
+    }
+
+    @media (max-width: 767.98px) {
+      .security-dashboard {
+        padding: 18px;
+      }
+
+      .sd-metric .value {
+        font-size: 24px;
+      }
+
+      .sd-chart {
+        height: 150px;
+      }
+
+      .support-left h3 {
+        font-size: 30px;
+      }
+
+      .support-left p {
+        font-size: 16px;
+      }
+
+      .support-faq-btn {
+        font-size: 22px;
+        padding: 14px 0;
+      }
+
+      .support-faq-btn .toggle {
+        font-size: 20px;
+      }
+
+      .support-faq-body {
+        font-size: 16px;
+      }
+
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      .sd-bar,
+      .sd-table tbody tr {
+        transition: none !important;
+      }
+    }
+
+    .live-news-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 30px;
+    }
+
+    .threat-news-head {
+      padding-bottom: 16px !important;
+    }
+
+    .live-news-meta {
+      color: rgba(186, 230, 253, 0.84);
+      font-size: 13px;
+      margin: 0;
+    }
+
+    .live-news-refresh {
+      border: 1px solid rgba(56, 189, 248, 0.45);
+      background: rgba(8, 47, 73, 0.55);
+      color: #e0f2fe;
+      border-radius: 999px;
+      padding: 8px 14px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      transition: all 0.2s ease;
+    }
+
+    .live-news-refresh:hover,
+    .live-news-refresh:focus {
+      background: rgba(14, 116, 144, 0.8);
+      color: #f0f9ff;
+      outline: none;
+    }
+
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .news-card {
+      border-radius: 14px;
+      border: 1px solid rgba(125, 211, 252, 0.14);
+      background: rgba(2, 6, 23, 0.34);
+      backdrop-filter: blur(2px);
+      overflow: hidden;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .news-image {
+      display: block;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      background: rgba(30, 41, 59, 0.8);
+    }
+
+    .news-content {
+      padding: 14px 14px 16px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .news-kicker {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    .news-source {
+      font-size: 11px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: #67e8f9;
+    }
+
+    .news-date {
+      font-size: 11px;
+      color: rgba(186, 230, 253, 0.74);
+    }
+
+    .news-title {
+      font-size: 16px;
+      line-height: 1.35;
+      margin-bottom: 8px;
+    }
+
+    .news-title a {
+      color: #e0f2fe;
+    }
+
+    .news-title a:hover {
+      color: #67e8f9;
+    }
+
+    .news-desc {
+      font-size: 13px;
+      line-height: 1.6;
+      color: rgba(224, 242, 254, 0.85);
+      margin-bottom: 12px;
+    }
+
+    .news-link {
+      margin-top: auto;
+      font-size: 12px;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      color: #22d3ee;
+      font-weight: 600;
+    }
+
+    .news-state {
+      grid-column: 1 / -1;
+      border-radius: 14px;
+      border: 1px dashed rgba(125, 211, 252, 0.38);
+      color: rgba(186, 230, 253, 0.9);
+      padding: 22px;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    .poster-tail {
+      margin-top: 36px;
+      padding: 30px 0 32px;
+      background: linear-gradient(180deg, rgba(2, 6, 23, 0) 0%, rgba(2, 6, 23, 0.3) 100%);
+    }
+
+    .poster-tail .container {
+      padding-top: 18px;
+      border-top: 1px solid rgba(56, 189, 248, 0.3);
+    }
+
+    .poster-flow {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .poster-item {
+      position: relative;
+      width: 100%;
+      min-height: 340px;
+      background-size: cover;
+      background-position: center;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .poster-item::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(2, 6, 23, 0.88) 14%, rgba(2, 6, 23, 0.22) 58%, rgba(2, 6, 23, 0.06) 100%);
+    }
+
+    .phish-poster-label {
+      position: absolute;
+      left: 14px;
+      right: 14px;
+      bottom: 14px;
+      z-index: 1;
+    }
+
+    .phish-poster-title {
+      margin: 0 0 4px;
+      color: #e0f2fe;
+      font-size: 16px;
+      font-weight: 700;
+    }
+
+    .phish-poster-subtitle {
+      margin: 0;
+      color: rgba(186, 230, 253, 0.88);
+      font-size: 12px;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+
+    .story-poster-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .story-poster-slot {
+      position: relative;
+      border-radius: 10px;
+      overflow: hidden;
+      aspect-ratio: 16 / 9;
+      background-size: cover;
+      background-position: center top;
+      background-repeat: no-repeat;
+      background-color: rgba(2, 6, 23, 0.12);
+      background-blend-mode: normal;
+    }
+
+    .story-poster-slot::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(2, 6, 23, 0.06) 0%, rgba(2, 6, 23, 0.18) 100%);
+      pointer-events: none;
+    }
+
+    body.light-mode {
+      background: #f5f9ff;
+      color: #111827;
+    }
+
+    body.light-mode .ftco-navbar-light {
+      background: rgba(255, 255, 255, 0.96) !important;
+      box-shadow: 0 8px 22px rgba(15, 23, 42, 0.08);
+    }
+
+    body.light-mode .ftco-navbar-light .navbar-nav .nav-item a {
+      color: #0f172a !important;
+    }
+
+    body.light-mode .ftco-navbar-light .navbar-nav .nav-item a[href="checker.html"],
+    body.light-mode .ftco-navbar-light .navbar-nav .nav-item.active a[href="checker.html"] {
+      color: #ef4444 !important;
+    }
+
+    body.light-mode .ftco-navbar-light .navbar-nav .nav-item a[href="checker.html"]:hover,
+    body.light-mode .ftco-navbar-light .navbar-nav .nav-item a[href="checker.html"]:focus {
+      color: #b91c1c !important;
+    }
+
+    body.light-mode .theme-toggle-track {
+      background: rgba(186, 230, 253, 0.95);
+      border-color: rgba(14, 116, 144, 0.35);
+    }
+
+    body.light-mode .theme-toggle-thumb {
+      transform: translateX(30px);
+      background: #0f172a;
+      color: #f8fbff;
+    }
+
+    body.light-mode .theme-icon-moon {
+      display: none;
+    }
+
+    body.light-mode .theme-icon-sun {
+      display: inline;
+    }
+
+    body.light-mode .security-dashboard,
+    body.light-mode .sd-card,
+    body.light-mode .sd-metric,
+    body.light-mode .news-card,
+    body.light-mode .news-state,
+    body.light-mode .block-18,
+    body.light-mode .contact-form {
+      background: rgba(255, 255, 255, 0.92) !important;
+      border-color: rgba(148, 163, 184, 0.28) !important;
+      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+    }
+
+    body.light-mode .ftco-section :is(h2, h3, h4, h5, h6, p, a, li, label, th, td, strong) {
+      color: #111827;
+    }
+
+    body.light-mode .heading-section h1.big,
+    body.light-mode .heading-section h1.big .big-focus {
+      color: rgba(125, 211, 252, 0.58) !important;
+    }
+
+    body.light-mode .heading-section h1.big .big-rest {
+      color: rgba(14, 165, 233, 0.42) !important;
+    }
+
+    body.light-mode .hero .text h1,
+    body.light-mode .hero .text h1 span,
+    body.light-mode .hero .text p,
+    body.light-mode .hero .slider-text .text * {
+      color: #111827 !important;
+    }
+
+    body.light-mode .hero .text h1 span,
+    body.light-mode .hero .slider-text .text h1 span {
+      color: #0ea5e9 !important;
+      text-shadow: 0 0 8px rgba(14, 165, 233, 0.2);
+    }
+
+    body.light-mode .hero .btn-white,
+    body.light-mode .hero .btn.btn-outline-white {
+      color: #0f172a !important;
+      border-color: rgba(15, 23, 42, 0.35) !important;
+      background: rgba(255, 255, 255, 0.9) !important;
+    }
+
+    body.light-mode .hero .btn-white:hover,
+    body.light-mode .hero .btn.btn-outline-white:hover {
+      color: #020617 !important;
+      background: rgba(255, 255, 255, 0.95) !important;
+      border-color: rgba(2, 6, 23, 0.55) !important;
+    }
+
+    body.light-mode .hero .btn-primary {
+      color: #f8fbff !important;
+    }
+
+    body.light-mode .sd-metric .label {
+      color: #0369a1;
+    }
+
+    body.light-mode .sd-metric .value {
+      color: #0f172a;
+    }
+
+    body.light-mode .sd-metric .note,
+    body.light-mode .sd-card h3,
+    body.light-mode .sd-legend li,
+    body.light-mode .sd-table th,
+    body.light-mode .sd-table td,
+    body.light-mode .sd-bar span,
+    body.light-mode .sd-donut-label {
+      color: #1e293b;
+    }
+
+    body.light-mode .sd-donut::after {
+      background: #f8fbff;
+      border-color: rgba(148, 163, 184, 0.4);
+    }
+
+    body.light-mode .story-poster-slot {
+      background-color: rgba(15, 23, 42, 0.08);
+    }
+
+    body.light-mode .support-contact-info,
+    body.light-mode .support-contact-form {
+      background: transparent;
+      border-color: transparent;
+    }
+
+    body.light-mode .support-contact-info p {
+      color: #334155 !important;
+    }
+
+    body.light-mode .support-contact-info a {
+      color: #ef4444 !important;
+    }
+
+    body.light-mode .support-contact-info a:hover,
+    body.light-mode .support-contact-info a:focus {
+      color: #b91c1c !important;
+    }
+
+    body.light-mode .support-contact-form .form-control {
+      background: #ffffff;
+      border-color: rgba(148, 163, 184, 0.45);
+      color: #0f172a;
+    }
+
+    body.light-mode .support-contact-form .form-control::placeholder {
+      color: #000000 !important;
+    }
+
+    body.light-mode .support-contact-status {
+      color: #334155;
+    }
+
+    body.light-mode #section-counter .block-18 .text strong {
+      color: #0ea5e9 !important;
+    }
+
+    body.light-mode #section-counter .block-18 .text span {
+      color: #0f172a !important;
+    }
+
+    body.light-mode #skills-section .support-left h3,
+    body.light-mode #skills-section .support-left p,
+    body.light-mode #skills-section .support-faq-btn,
+    body.light-mode #skills-section .support-faq-body,
+    body.light-mode #skills-section .support-faq-body li,
+    body.light-mode #skills-section .support-faq-btn .toggle {
+      color: #0f172a !important;
+    }
+
+    body.light-mode #skills-section .support-faq-list,
+    body.light-mode #skills-section .support-faq-item {
+      border-color: rgba(148, 163, 184, 0.35);
+    }
+
+    body.light-mode .news-title a:hover,
+    body.light-mode .news-link,
+    body.light-mode .news-source {
+      color: #0284c7 !important;
+    }
+
+    body.light-mode .support-link {
+      color: #ef4444 !important;
+    }
+
+    body.light-mode .support-link:hover,
+    body.light-mode .support-link:focus {
+      color: #b91c1c !important;
+    }
+
+    body.light-mode .about-section-title {
+      color: #111827;
+    }
+
+    body.light-mode .heading-section.big-content-active .about-key {
+      color: rgba(3, 105, 161, 0.92);
+      text-shadow: 0 0 6px rgba(56, 189, 248, 0.24);
+    }
+
+    body.light-mode .ftco-hireme.phishguard-cta h2 {
+      color: #f8fbff !important;
+    }
+
+    body.light-mode .ftco-hireme.phishguard-cta h2 span {
+      color: #22d3ee !important;
+    }
+
+    body.light-mode .ftco-hireme.phishguard-cta p {
+      color: rgba(224, 242, 254, 0.92) !important;
+    }
+
+    body.light-mode .phish-poster::before,
+    body.light-mode .poster-item::before,
+    body.light-mode .ftco-hireme.phishguard-cta::before {
+      background: linear-gradient(to top, rgba(15, 23, 42, 0.72) 12%, rgba(15, 23, 42, 0.34) 58%, rgba(15, 23, 42, 0.14) 100%);
+    }
+
+    body.light-mode .ftco-footer {
+      background: #eaf2fb;
+    }
+
+    #about-section {
+      padding-bottom: 3.2rem !important;
+    }
+
+    #services-section {
+      padding-top: 3.2rem !important;
+    }
+
+    #skills-section,
+    #projects-section {
+      padding-top: 4.2rem !important;
+      padding-bottom: 4.2rem !important;
+    }
+
+    @media (max-width: 991.98px) {
+      .news-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 767.98px) {
+      #about-section {
+        padding-bottom: 2.4rem !important;
+      }
+
+      #services-section {
+        padding-top: 2.4rem !important;
+      }
+
+      #skills-section,
+      #projects-section {
+        padding-top: 3rem !important;
+        padding-bottom: 3rem !important;
+      }
+
+      .live-news-top {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .news-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .poster-flow {
+        grid-template-columns: 1fr;
+      }
+
+      .poster-item {
+        min-height: 300px;
+      }
+    }
+  </style>
+</head>
+
+<body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+
+
+  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
+    <div class="container">
+      <span class="navbar-brand brand-logo">PhishGuard</span>
+      <button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse"
+        data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="oi oi-menu"></span> Menu
+      </button>
+
+      <div class="collapse navbar-collapse" id="ftco-nav">
+        <ul class="navbar-nav nav ml-auto">
+          <li class="nav-item"><a href="#home-section" class="nav-link"><span>Home</span></a></li>
+          <li class="nav-item"><a href="checker.html" class="nav-link"><span>Threat Scan</span></a></li>
+          <li class="nav-item"><a href="#about-section" class="nav-link"><span>About</span></a></li>
+          <li class="nav-item"><a href="#services-section" class="nav-link"><span>Dashboard</span></a></li>
+          <li class="nav-item"><a href="#skills-section" class="nav-link"><span>Help</span></a></li>
+          <li class="nav-item"><a href="#projects-section" class="nav-link"><span>Threat News</span></a></li>
+          <li class="nav-item"><a href="#contact-section" class="nav-link"><span>Contact</span></a></li>
+        </ul>
+        <div class="theme-toggle-wrap">
+          <button type="button" class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Toggle dark and light mode"
+            aria-pressed="false">
+            <span class="theme-toggle-track" aria-hidden="true">
+              <span class="theme-toggle-thumb">
+                <i class="theme-icon-moon ion-ios-moon" aria-hidden="true"></i>
+                <i class="theme-icon-sun ion-ios-sunny" aria-hidden="true"></i>
+              </span>
+            </span>
+            <span class="visually-hidden">Toggle dark and light mode</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <section id="home-section" class="hero">
+    <div class="home-slider  owl-carousel">
+      <div class="slider-item ">
+        <div class="overlay"></div>
+        <div class="container">
+          <div class="row d-md-flex no-gutters slider-text align-items-end justify-content-end"
+            data-scrollax-parent="true">
+            <div class="one-third js-fullheight order-md-last img"
+              style="background-image:url(images/cyberpunk-hacker-access-denied.jpg);">
+
+            </div>
+            <div class="one-forth d-flex  align-items-center ftco-animate"
+              data-scrollax=" properties: { translateY: '70%' }">
+              <div class="text">
+                <h1 class="mb-4 mt-3"> Phishing Detection<br><span>Analyst</span></h1>
+                <p><a href="checker.html?mode=email" class="btn btn-primary py-3 px-4 hero-cta-btn hero-cta-email">Check
+                    Email</a> <a href="checker.html?mode=url"
+                    class="btn btn-white btn-outline-white py-3 px-4 hero-cta-btn hero-cta-url">Check URL</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="slider-item">
+        <div class="overlay"></div>
+        <div class="container">
+          <div class="row d-flex no-gutters slider-text align-items-end justify-content-end"
+            data-scrollax-parent="true">
+            <div class="one-third js-fullheight order-md-last img"
+              style="background-image:url(images/cybersecurity-breach.jpg);">
+              <div class="overlay"></div>
+            </div>
+            <div class="one-forth d-flex align-items-center ftco-animate"
+              data-scrollax=" properties: { translateY: '70%' }">
+              <div class="text">
+                <h1 class="mb-4 mt-3"> Email, URL<br> <span>Threat Intelligence</span></h1>
+                <p><a href="checker.html?mode=email" class="btn btn-primary py-3 px-4 hero-cta-btn hero-cta-email">Check
+                    Email</a> <a href="checker.html?mode=url"
+                    class="btn btn-white btn-outline-white py-3 px-4 hero-cta-btn hero-cta-url">Check URL</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ftco-about img ftco-section ftco-no-pb" id="about-section">
+    <div class="container">
+      <div class="row d-flex">
+        <div class="col-md-6 col-lg-7 pl-lg-5 pb-5">
+          <div class="row justify-content-start pb-3">
+            <div class="col-md-12 heading-section ftco-animate">
+              <h1 class="big about-big-blue"><span class="big-focus">About</span></h1>
+              <h2 class="mb-4 about-section-title">About System</h2>
+              <p> Focused on <span class="about-key">phishing detection</span> in modern cybersecurity environments,
+                with emphasis on identifying malicious URLs,
+                deceptive email content, and spoofed domains. The approach combines <span class="about-key">machine
+                  learning</span>, threat intelligence,
+                and behavioral indicators to detect attacks early and reduce false positives.</p>
+              <p> Core capabilities include <span class="about-key">URL reputation checks</span>, suspicious keyword and
+                structure analysis, and email-content risk scoring.
+                The system is designed to give clear, fast, and understandable threat signals for both technical and
+                non-technical users.</p>
+              <p> Functional advantages include <span class="about-key">early warning</span> for phishing campaigns,
+                improved decision-making before clicking unknown links,
+                reduced false positives through layered checks, and better overall cyber awareness during daily browsing
+                and email usage.</p>
+              <p> This approach supports safer workflows by helping users identify spoofed domains, detect <span
+                  class="about-key">social-engineering patterns</span>,
+                and act quickly on <span class="about-key">high-risk indicators</span> before damage occurs.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ftco-section" id="services-section">
+    <div class="container">
+      <div class="row justify-content-center py-5 mt-5">
+        <div class="col-md-12 heading-section text-center ftco-animate">
+          <h1 class="big big-2"><span class="big-focus">Dashboard</span></h1>
+          <h2 class="mb-4">Threat Intelligence Dashboard</h2>
+          <p>Live snapshot of recent phishing checks across email and URL channels.</p>
+        </div>
+      </div>
+      <div class="security-dashboard ftco-animate">
+        <div class="row">
+          <div class="col-md-3 mb-3">
+            <div class="sd-metric">
+              <div class="label"><i class="icon-mail"></i> Email Checks (24h)</div>
+              <div class="value" data-target="348" data-decimals="0">0</div>
+              <p class="note" id="note-email">+12% from yesterday</p>
+            </div>
+          </div>
+          <div class="col-md-3 mb-3">
+            <div class="sd-metric">
+              <div class="label"><i class="icon-link2"></i> URL Checks (24h)</div>
+              <div class="value" data-target="511" data-decimals="0">0</div>
+              <p class="note" id="note-url">Peak at 14:00 UTC</p>
+            </div>
+          </div>
+          <div class="col-md-3 mb-3">
+            <div class="sd-metric">
+              <div class="label"><i class="icon-warning2"></i> Threats Blocked</div>
+              <div class="value" data-target="74" data-decimals="0">0</div>
+              <p class="note" id="note-threats">8 high-risk domains stopped</p>
+            </div>
+          </div>
+          <div class="col-md-3 mb-3">
+            <div class="sd-metric">
+              <div class="label"><i class="icon-check-circle"></i> Model Accuracy</div>
+              <div class="value" data-target="94.6" data-decimals="1" data-suffix="%">0%</div>
+              <p class="note" id="note-accuracy">False positive rate: 2.8%</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mt-2">
+          <div class="col-lg-7 mb-3">
+            <div class="sd-card">
+              <h3>Threat Trend (Last 7 Days)</h3>
+              <div class="sd-chart mt-4">
+                <div class="sd-bar" data-height="0%"><span>Mon</span></div>
+                <div class="sd-bar" data-height="0%"><span>Tue</span></div>
+                <div class="sd-bar" data-height="0%"><span>Wed</span></div>
+                <div class="sd-bar" data-height="0%"><span>Thu</span></div>
+                <div class="sd-bar" data-height="0%"><span>Fri</span></div>
+                <div class="sd-bar" data-height="0%"><span>Sat</span></div>
+                <div class="sd-bar" data-height="0%"><span>Sun</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-5 mb-3">
+            <div class="sd-card">
+              <h3>Detection Distribution</h3>
+              <div class="sd-donut" data-clean="81">
+                <div class="sd-donut-label"><span class="sd-donut-number">0</span>% Clean</div>
+              </div>
+              <ul class="sd-legend">
+                <li><span class="sd-dot safe"></span>Clean traffic: <span id="legend-clean">81</span>%</li>
+                <li><span class="sd-dot threat"></span>Suspicious or malicious: <span id="legend-threat">19</span>%</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mt-1">
+          <div class="col-md-12">
+            <div class="sd-card">
+              <h3>Recent Checks</h3>
+              <div class="table-responsive mt-2">
+                <table class="sd-table">
+                  <thead>
+                    <tr>
+                      <th>Type</th>
+                      <th>Target</th>
+                      <th>Risk Score</th>
+                      <th>Status</th>
+                    </tr>
+                  </thead>
+                  <tbody id="recent-checks-body">
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="ftco-section" id="skills-section">
+    <div class="container">
+      <div class="row justify-content-center pb-5">
+        <div class="col-md-12 heading-section text-center ftco-animate">
+          <h1 class="big big-2"><span class="big-focus">Help</span></h1>
+          <h2 class="mb-4">Help &amp; Support</h2>
+          <p>Common questions and practical guidance for safely using PhishGuard in day-to-day email and web browsing.
+          </p>
+        </div>
+      </div>
+      <div class="row support-layout">
+        <div class="col-lg-4 mb-4 mb-lg-0 ftco-animate support-left">
+          <h3>Frequently<br>Asked Questions</h3>
+          <p>Need more questions?<br>Ask via <a href="chatbot.html" class="support-link chat-link-animated"
+              id="help-chat-link"><span class="chat-link-bot" aria-hidden="true"></span><span class="chat-link-text">AI
+                Support Chat</span></a> or run a <a href="checker.html" class="support-link">Threat Scan</a>.</p>
+        </div>
+        <div class="col-lg-8 ftco-animate">
+          <div class="support-faq-list" id="support-faq">
+            <div class="support-faq-item">
+              <button class="support-faq-btn" type="button" data-toggle="collapse" data-target="#faqOne"
+                aria-expanded="true" aria-controls="faqOne">
+                How does PhishGuard detect phishing links and emails?
+                <span class="toggle">-</span>
+              </button>
+              <div id="faqOne" class="collapse show" data-parent="#support-faq">
+                <div class="support-faq-body">
+                  PhishGuard analyzes URL structure, suspicious keywords, domain behavior, and email language patterns
+                  to generate one clear risk score.
+                  <ul>
+                    <li>Extracts risk indicators from URL and email text</li>
+                    <li>Matches phishing behavior patterns</li>
+                    <li>Labels results as clean, suspicious, or high risk</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="support-faq-item">
+              <button class="support-faq-btn collapsed" type="button" data-toggle="collapse" data-target="#faqTwo"
+                aria-expanded="false" aria-controls="faqTwo">
+                What should I do if a result is high risk?
+                <span class="toggle">+</span>
+              </button>
+              <div id="faqTwo" class="collapse" data-parent="#support-faq">
+                <div class="support-faq-body">
+                  Do not click links, avoid downloads, and do not reply. Report it to your security team and block
+                  sender/domain access where possible.
+                </div>
+              </div>
+            </div>
+            <div class="support-faq-item">
+              <button class="support-faq-btn collapsed" type="button" data-toggle="collapse" data-target="#faqThree"
+                aria-expanded="false" aria-controls="faqThree">
+                Can I trust a "Clean" result completely?
+                <span class="toggle">+</span>
+              </button>
+              <div id="faqThree" class="collapse" data-parent="#support-faq">
+                <div class="support-faq-body">
+                  Treat clean as lower risk, not zero risk. Always verify sender identity and message context for
+                  sensitive actions.
+                </div>
+              </div>
+            </div>
+            <div class="support-faq-item">
+              <button class="support-faq-btn collapsed" type="button" data-toggle="collapse" data-target="#faqFour"
+                aria-expanded="false" aria-controls="faqFour">
+                How can I improve detection quality in daily workflow?
+                <span class="toggle">+</span>
+              </button>
+              <div id="faqFour" class="collapse" data-parent="#support-faq">
+                <div class="support-faq-body">
+                  Scan URL and email content together, review high-risk alerts quickly, and keep security indicators
+                  updated.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ftco-section ftco-project" id="projects-section">
+    <div class="container">
+      <div class="row justify-content-center pb-5 threat-news-head">
+        <div class="col-md-12 heading-section text-center ftco-animate">
+          <h1 class="big big-2"><span class="big-focus">Threat News</span></h1>
+          <h2 class="mb-4">Live Cyber Attacks &amp; Phishing</h2>
+          <p>Latest public reports from external cybersecurity platforms, including active phishing campaigns and attack
+            incidents.</p>
+        </div>
+      </div>
+      <div class="live-news-top ftco-animate">
+        <p class="live-news-meta" id="live-news-updated">Loading latest threat reports...</p>
+        <button type="button" class="live-news-refresh" id="live-news-refresh">Refresh Feed</button>
+      </div>
+      <div class="news-grid ftco-animate" id="live-news-grid">
+        <div class="news-state">Loading live cyber attacks and phishing stories...</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ftco-section contact-section ftco-no-pb" id="awareness-section">
+    <div class="container">
+      <div class="row justify-content-center mb-5 pb-3">
+        <div class="col-md-7 heading-section text-center ftco-animate">
+          <h1 class="big big-2"><span class="big-focus">Phishing</span></h1>
+          <h2 class="mb-4">Phishing Awareness</h2>
+        </div>
+      </div>
+      <div class="story-poster-grid">
+        <div class="story-poster-slot ftco-animate" style="background-image: url('images/land.jpg');"></div>
+        <div class="story-poster-slot ftco-animate" style="background-image: url('images/22.jpg');"></div>
+        <div class="story-poster-slot ftco-animate" style="background-image: url('images/33.jpg');"></div>
+        <div class="story-poster-slot ftco-animate" style="background-image: url('images/44.jpg');"></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="poster-tail">
+    <div class="container">
+      <div class="poster-flow ftco-animate">
+        <article class="poster-item"
+          style="background-image: url(images/comic-book-lifestyle-scene-illustration\ \(1\).jpg);">
+          <div class="phish-poster-label">
+            <p class="phish-poster-title">Think Before You Click</p>
+            <p class="phish-poster-subtitle">Spot Fake Links Early</p>
+          </div>
+        </article>
+        <article class="poster-item" style="background-image: url(images/cyberpunk-woman-with-security-lock.jpg);">
+          <div class="phish-poster-label">
+            <p class="phish-poster-title">Protect Your Accounts</p>
+            <p class="phish-poster-subtitle">Use MFA + Verify Senders</p>
+          </div>
+        </article>
+        <article class="poster-item" style="background-image: url('images/cybersecurity-concept-collage-design.jpg');">
+          <div class="phish-poster-label">
+            <p class="phish-poster-title">Report Suspicious Emails</p>
+            <p class="phish-poster-subtitle">Fast Reporting Reduces Risk</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+
+  <section class="ftco-section ftco-no-pt ftco-no-pb ftco-counter img" id="section-counter">
+    <div class="container">
+      <div class="row d-md-flex align-items-center">
+        <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
+          <div class="block-18">
+            <div class="text">
+              <strong class="number" id="count-threat-scans" data-number="0">0</strong>
+
+              <span>Threat Scans Run (24h)</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
+          <div class="block-18">
+            <div class="text">
+              <strong class="number" id="count-emails-detected" data-number="0">0</strong>
+
+              <span>High-Risk Emails Detected</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
+          <div class="block-18">
+            <div class="text">
+              <strong class="number" id="count-urls-flagged" data-number="0">0</strong>
+
+              <span>Suspicious URLs Flagged</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
+          <div class="block-18">
+            <div class="text">
+              <strong class="number" id="count-response-min" data-number="0">0</strong>
+
+              <span>Avg Response Time (min)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ftco-section ftco-hireme img margin-top phishguard-cta"
+    style="background-image: url(images/spectacular-sci-fi-landscape.jpg)">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-7 ftco-animate text-center">
+          <h2><span>PhishGuard</span> here to protect</h2>
+          <p>Stay safer with real-time phishing detection for suspicious emails and URLs.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ftco-section contact-section ftco-no-pb" id="contact-section">
+    <div class="container">
+      <div class="row justify-content-center mb-5 pb-3">
+        <div class="col-md-7 heading-section text-center ftco-animate">
+          <h1 class="big big-2"><span class="big-focus">Contact</span></h1>
+          <h2 class="mb-4">Contact Support</h2>
+        </div>
+      </div>
+      <div class="row no-gutters block-9 support-contact-wrap">
+        <div class="col-md-5 d-flex mb-4 mb-md-0">
+          <div class="support-contact-info ftco-animate w-100">
+            <h3>Need Help With A Suspicious Message?</h3>
+            <p>Share your details and our team will review the issue.</p>
+            <p>Email support: <a href="mailto:phishguardsupport@gmail.com">phishguardsupport@gmail.com</a></p>
+          </div>
+        </div>
+        <div class="col-md-7 d-flex">
+          <form id="support-contact-form" class="support-contact-form p-4 p-md-5 w-100 ftco-animate">
+            <div class="form-group">
+              <input type="text" class="form-control" name="name" placeholder="Your Name" required>
+            </div>
+            <div class="form-group">
+              <input type="email" class="form-control" name="email" placeholder="Your Email" required>
+            </div>
+            <div class="form-group">
+              <textarea class="form-control" name="message" cols="30" rows="7" placeholder="Message"
+                required></textarea>
+            </div>
+            <div class="form-group mb-0">
+              <button type="submit" class="btn btn-primary py-3 px-5 hero-cta-btn">Send Message</button>
+            </div>
+            <p id="support-contact-status" class="support-contact-status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="ftco-footer ftco-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center">
+
+          <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            Copyright &copy;
+            <script>document.write(new Date().getFullYear());</script>|Yenepoya Project
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+
+  <!-- loader -->
+  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
+      <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
+      <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
+        stroke="#F96D00" />
+    </svg></div>
+
+
+  <script src="js/jquery.min.js"></script>
+  <script src="js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/jquery.easing.1.3.js"></script>
+  <script src="js/jquery.waypoints.min.js"></script>
+  <script src="js/jquery.stellar.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/aos.js"></script>
+  <script src="js/jquery.animateNumber.min.js"></script>
+  <script src="js/scrollax.min.js"></script>
+
+  <script src="js/main.js"></script>
+  <script>
+    (function () {
+      var toggleBtn = document.getElementById("theme-toggle-btn");
+      if (!toggleBtn) return;
+
+      var STORAGE_KEY = "phishguard-theme";
+      var root = document.body;
+
+      function applyTheme(theme) {
+        var isLight = theme === "light";
+        root.classList.toggle("light-mode", isLight);
+        toggleBtn.setAttribute("aria-pressed", isLight ? "true" : "false");
+        toggleBtn.setAttribute("title", isLight ? "Switch to dark mode" : "Switch to light mode");
+        toggleBtn.setAttribute("aria-label", isLight ? "Switch to dark mode" : "Switch to light mode");
+      }
+
+      function getInitialTheme() {
+        var saved = localStorage.getItem(STORAGE_KEY);
+        if (saved === "light" || saved === "dark") return saved;
+        return "dark";
+      }
+
+      var currentTheme = getInitialTheme();
+      applyTheme(currentTheme);
+
+      toggleBtn.addEventListener("click", function () {
+        currentTheme = currentTheme === "light" ? "dark" : "light";
+        applyTheme(currentTheme);
+        localStorage.setItem(STORAGE_KEY, currentTheme);
+      });
+    })();
+
+    (function () {
+      var bigTexts = document.querySelectorAll(".heading-section h1.big");
+      if (!bigTexts.length) return;
+
+      function updateBigTextSnap() {
+        var vh = window.innerHeight || document.documentElement.clientHeight;
+        var focusLine = vh * 0.45;
+        var snapRange = vh * 0.2;
+
+        bigTexts.forEach(function (el) {
+          var rect = el.getBoundingClientRect();
+          var center = rect.top + rect.height / 2;
+          var isActive = Math.abs(center - focusLine) <= snapRange;
+          var section = el.closest(".heading-section");
+
+          if (isActive) {
+            el.classList.add("big-snap-active");
+            if (section) section.classList.add("big-content-active");
+          } else {
+            el.classList.remove("big-snap-active");
+            if (section) section.classList.remove("big-content-active");
+          }
+        });
+      }
+
+      var ticking = false;
+      function onScrollOrResize() {
+        if (!ticking) {
+          window.requestAnimationFrame(function () {
+            updateBigTextSnap();
+            ticking = false;
+          });
+          ticking = true;
+        }
+      }
+
+      updateBigTextSnap();
+      window.addEventListener("scroll", onScrollOrResize, { passive: true });
+      window.addEventListener("resize", onScrollOrResize);
+    })();
+
+    (function () {
+      var dashboard = document.querySelector("#services-section .security-dashboard");
+      if (!dashboard) return;
+      var impactCounters = {
+        threatScans: document.getElementById("count-threat-scans"),
+        emailsDetected: document.getElementById("count-emails-detected"),
+        urlsFlagged: document.getElementById("count-urls-flagged"),
+        responseMin: document.getElementById("count-response-min")
+      };
+
+      var hasAnimated = false;
+      // BACKEND INTEGRATION GUIDE (STEP-BY-STEP):
+      // STEP 1: Set your API endpoint here:
+      //    var DASHBOARD_API_ENDPOINT = "/api/dashboard";
+      // STEP 2: Call backend and pass response into `updateDashboardFromPayload(data)`:
+      //    fetch(DASHBOARD_API_ENDPOINT)
+      //      .then(function (res) { return res.json(); })
+      //      .then(function (data) { updateDashboardFromPayload(data); });
+      // STEP 3: Make sure backend returns this payload format:
+      //    {
+      //      emailChecks24h, urlChecks24h, threatsBlocked24h, modelAccuracy,
+      //      cleanPct, trend:[7 values], recentChecks:[{type,target,riskScore,status}],
+      //      highRiskEmails24h, suspiciousUrlsFlagged24h, avgResponseMinutes,
+      //      threatScans24h (optional; else computed from emailChecks24h + urlChecks24h)
+      //    }
+      function safeNumber(val) {
+        var parsed = Number(val);
+        return isFinite(parsed) ? parsed : 0;
+      }
+
+      function setCounterValue(el, value) {
+        if (!el) return;
+        var rounded = Math.max(0, Math.round(safeNumber(value)));
+        el.setAttribute("data-number", String(rounded));
+        el.textContent = rounded.toLocaleString();
+        if (window.jQuery) {
+          window.jQuery(el).data("number", rounded);
+        }
+      }
+
+      function updateImpactCountersFromPayload(payload) {
+        if (!payload) return;
+        var computedThreatScans = safeNumber(payload.emailChecks24h) + safeNumber(payload.urlChecks24h);
+        setCounterValue(
+          impactCounters.threatScans,
+          typeof payload.threatScans24h === "number" ? payload.threatScans24h : computedThreatScans
+        );
+        setCounterValue(
+          impactCounters.emailsDetected,
+          typeof payload.highRiskEmails24h === "number" ? payload.highRiskEmails24h : payload.reportsReviewed24h
+        );
+        setCounterValue(
+          impactCounters.urlsFlagged,
+          typeof payload.suspiciousUrlsFlagged24h === "number"
+            ? payload.suspiciousUrlsFlagged24h
+            : payload.suspiciousDomainsFlagged24h
+        );
+        setCounterValue(impactCounters.responseMin, payload.avgResponseMinutes);
+      }
+
+      function updateDashboardFromPayload(payload) {
+        if (!payload) return;
+        var metricEls = dashboard.querySelectorAll(".sd-metric .value");
+        if (metricEls.length >= 4) {
+          metricEls[0].setAttribute("data-target", String(payload.emailChecks24h || 0));
+          metricEls[1].setAttribute("data-target", String(payload.urlChecks24h || 0));
+          metricEls[2].setAttribute("data-target", String(payload.threatsBlocked24h || 0));
+          metricEls[3].setAttribute("data-target", String(payload.modelAccuracy || 0));
+        }
+        var noteEmail = document.getElementById("note-email");
+        var noteUrl = document.getElementById("note-url");
+        var noteThreats = document.getElementById("note-threats");
+        var noteAccuracy = document.getElementById("note-accuracy");
+
+        if (noteEmail) noteEmail.textContent = payload.emailChecks24h > 0 ? payload.emailChecks24h + " emails scanned" : "No emails scanned today";
+        if (noteUrl) noteUrl.textContent = payload.urlChecks24h > 0 ? payload.urlChecks24h + " URLs scanned" : "No URLs scanned today";
+        if (noteThreats) noteThreats.textContent = payload.threatsBlocked24h + " threats detected";
+        if (noteAccuracy) noteAccuracy.textContent = "Based on " + (payload.threatScans24h || 0) + " total scans";
+
+        var bars = dashboard.querySelectorAll(".sd-bar");
+        if (Array.isArray(payload.trend) && payload.trend.length && bars.length) {
+          var maxVal = Math.max.apply(null, payload.trend);
+          bars.forEach(function (bar, idx) {
+            var val = payload.trend[idx] || 0;
+            var pct = maxVal > 0 ? Math.round((val / maxVal) * 100) : 0;
+            bar.setAttribute("data-height", (pct > 0 ? Math.max(10, pct) : 0) + "%");
+            bar.style.height = "0";
+          });
+        }
+
+        if (typeof payload.cleanPct === "number") {
+          var donut = dashboard.querySelector(".sd-donut");
+          if (donut) donut.setAttribute("data-clean", String(payload.cleanPct));
+        }
+
+        updateImpactCountersFromPayload(payload);
+        Object.values(impactCounters).forEach(function (el) {
+          if (!el) return;
+          var target = parseInt(el.getAttribute('data-number') || '0', 10);
+          var start = performance.now();
+          var duration = 1400;
+          (function tick(now) {
+            var progress = Math.min((now - start) / duration, 1);
+            var eased = 1 - Math.pow(1 - progress, 3);
+            el.textContent = Math.round(target * eased).toLocaleString();
+            if (progress < 1) window.requestAnimationFrame(tick);
+          })(performance.now());
+        });
+        // Update legend text
+        var legendClean = document.getElementById("legend-clean");
+        var legendThreat = document.getElementById("legend-threat");
+        if (legendClean) legendClean.textContent = payload.cleanPct || 0;
+        if (legendThreat) legendThreat.textContent = 100 - (payload.cleanPct || 0);
+
+        // Update recent checks table
+        var tbody = document.getElementById("recent-checks-body");
+        if (tbody) {
+          if (Array.isArray(payload.recentChecks) && payload.recentChecks.length) {
+            tbody.innerHTML = payload.recentChecks.map(function (check) {
+              var statusClass = check.status === "blocked" ? "blocked" : "clean";
+              var statusText = check.status === "blocked" ? "Blocked" : "Clean";
+              return [
+                '<tr class="sd-check-row">',
+                '<td>' + check.type + '</td>',
+                '<td>' + check.target + '</td>',
+                '<td>' + check.riskScore + '</td>',
+                '<td><span class="sd-status ' + statusClass + '">' + statusText + '</span></td>',
+                '</tr>'
+              ].join("");
+            }).join("");
+          } else {
+            tbody.innerHTML = '<tr><td colspan="4" class="text-center py-4 text-muted">No recent scans found. Run a check to see results here!</td></tr>';
+          }
+        }
+      }
+
+        function formatMetricValue(value, decimals, suffix) {
+          var fixed = decimals > 0 ? value.toFixed(decimals) : Math.round(value).toString();
+          return fixed + (suffix || "");
+        }
+
+        function animateNumber(el, duration) {
+          var target = parseFloat(el.getAttribute("data-target"));
+          var decimals = parseInt(el.getAttribute("data-decimals") || "0", 10);
+          var suffix = el.getAttribute("data-suffix") || "";
+          var start = performance.now();
+
+          function tick(now) {
+            var progress = Math.min((now - start) / duration, 1);
+            var eased = 1 - Math.pow(1 - progress, 3);
+            var current = target * eased;
+            el.textContent = formatMetricValue(current, decimals, suffix);
+            if (progress < 1) window.requestAnimationFrame(tick);
+          }
+
+          window.requestAnimationFrame(tick);
+        }
+
+        function updateBarDayLabels() {
+          var DAY_NAMES = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+          var todayIdx = new Date().getDay();
+          var bars = dashboard.querySelectorAll('.sd-bar');
+          bars.forEach(function (bar, idx) {
+            var span = bar.querySelector('span');
+            if (span) {
+              var dayNum = (todayIdx - (6 - idx) + 7) % 7;
+              span.textContent = DAY_NAMES[dayNum];
+            }
+          });
+        }
+
+        function animateDashboard() {
+          if (hasAnimated) return;
+          hasAnimated = true;
+          dashboard.classList.add("is-live");
+          if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+            var staticMetrics = dashboard.querySelectorAll(".sd-metric .value[data-target]");
+            staticMetrics.forEach(function (el) {
+              var target = parseFloat(el.getAttribute("data-target") || "0");
+              var decimals = parseInt(el.getAttribute("data-decimals") || "0", 10);
+              var suffix = el.getAttribute("data-suffix") || "";
+              el.textContent = formatMetricValue(target, decimals, suffix);
+            });
+
+            var staticBars = dashboard.querySelectorAll(".sd-bar[data-height]");
+            staticBars.forEach(function (bar) {
+              bar.style.height = bar.getAttribute("data-height") || "0%";
+            });
+
+            var staticDonut = dashboard.querySelector(".sd-donut");
+            var staticDonutNumber = dashboard.querySelector(".sd-donut-number");
+            if (staticDonut && staticDonutNumber) {
+              var staticCleanPct = parseFloat(staticDonut.getAttribute("data-clean") || "0");
+              staticDonut.style.setProperty("--clean-angle", (staticCleanPct * 3.6).toFixed(1) + "deg");
+              staticDonutNumber.textContent = Math.round(staticCleanPct).toString();
+            }
+            return;
+          }
+
+          var metricEls = dashboard.querySelectorAll(".sd-metric .value[data-target]");
+          metricEls.forEach(function (el, idx) {
+            animateNumber(el, 1200 + idx * 250);
+          });
+
+          var bars = dashboard.querySelectorAll(".sd-bar[data-height]");
+          bars.forEach(function (bar, idx) {
+            var barHeight = bar.getAttribute("data-height") || "0%";
+            window.setTimeout(function () {
+              bar.style.height = barHeight;
+            }, 130 + idx * 90);
+          });
+
+          var donut = dashboard.querySelector(".sd-donut");
+          var donutNumber = dashboard.querySelector(".sd-donut-number");
+          if (donut && donutNumber) {
+            var cleanPct = parseFloat(donut.getAttribute("data-clean") || "0");
+            var targetAngle = cleanPct * 3.6;
+
+            var start = performance.now();
+            var duration = 1700;
+            function tickDonut(now) {
+              var progress = Math.min((now - start) / duration, 1);
+              var eased = 1 - Math.pow(1 - progress, 3);
+              donut.style.setProperty("--clean-angle", (targetAngle * eased).toFixed(1) + "deg");
+              donutNumber.textContent = Math.round(cleanPct * eased).toString();
+              if (progress < 1) window.requestAnimationFrame(tickDonut);
+            }
+            window.requestAnimationFrame(tickDonut);
+          }
+
+          var rows = dashboard.querySelectorAll(".sd-check-row");
+          rows.forEach(function (row, idx) {
+            row.style.transitionDelay = (0.2 + idx * 0.12).toFixed(2) + "s";
+          });
+        }
+
+        var isLocal = ["localhost", "127.0.0.1", "::1"].indexOf(window.location.hostname) !== -1;
+        var API_BASE = isLocal ? "http://127.0.0.1:8000" : "https://phishguard-prod-abc123.railway.app";
+
+        fetch(API_BASE + "/api/dashboard")
+          .then(function (res) { return res.json(); })
+          .then(function (data) {
+            updateDashboardFromPayload(data);
+            updateBarDayLabels();
+            hasAnimated = false;
+            animateDashboard();
+          })
+          .catch(function () {
+            var localStats = getLocalScanStats();
+            updateDashboardFromPayload(localStats || {
+              emailChecks24h: 0, urlChecks24h: 0, threatsBlocked24h: 0,
+              modelAccuracy: 94.6, cleanPct: 100,
+              trend: [0, 0, 0, 0, 0, 0, 0],
+              highRiskEmails24h: 0, suspiciousUrlsFlagged24h: 0,
+              avgResponseMinutes: 6, recentChecks: []
+            });
+            updateBarDayLabels();
+            hasAnimated = false;
+            animateDashboard();
+          });
+
+        // WHEN BACKEND IS READY:
+        // STEP 1: Comment out or remove the demo block above:
+        //   updateDashboardFromPayload({ ...demo data... });
+        // STEP 2: Uncomment and use this real API call:
+        //   var DASHBOARD_API_ENDPOINT = "/api/dashboard";
+        //   fetch(DASHBOARD_API_ENDPOINT)
+        //     .then(function (res) { return res.json(); })
+        //     .then(function (data) { updateDashboardFromPayload(data); });
+
+        if ("IntersectionObserver" in window) {
+          var observer = new IntersectionObserver(
+            function (entries) {
+              entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                  animateDashboard();
+                  observer.disconnect();
+                }
+              });
+            },
+            { threshold: 0.35 }
+          );
+          observer.observe(dashboard);
+        } else {
+          animateDashboard();
+        }
+      }) ();
+
+      (function () {
+        var newsGrid = document.getElementById("live-news-grid");
+        var updatedEl = document.getElementById("live-news-updated");
+        var refreshBtn = document.getElementById("live-news-refresh");
+        if (!newsGrid || !updatedEl || !refreshBtn) return;
+        var SOURCE_FEEDS = [
+          { name: "The Hacker News", url: "https://thehackernews.com/feeds/posts/default" }
+        ];
+        var FALLBACK_NEWS = [];
+        var lastRenderedLinks = [];
+        function escapeHtml(str) {
+          return (str || "")
+            .replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;")
+            .replace(/\"/g, "&quot;")
+            .replace(/'/g, "&#39;");
+        }
+        function stripHtml(str) {
+          return (str || "").replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
+        }
+        function formatDate(dateVal) {
+          var d = new Date(dateVal);
+          if (isNaN(d.getTime())) return "Unknown date";
+          return d.toLocaleString(undefined, {
+            year: "numeric",
+            month: "short",
+            day: "numeric",
+            hour: "2-digit",
+            minute: "2-digit"
+          });
+        }
+        function findImage(item) {
+          if (item.thumbnail) return item.thumbnail;
+          if (item.enclosure && item.enclosure.link) return item.enclosure.link;
+          var html = item.content || item.description || "";
+          var match = html.match(/<img[^>]+src=[\"']([^\"']+)[\"']/i);
+          return match ? match[1] : "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1200&q=80";
+        }
+        function normalizeItem(item, sourceName) {
+          return {
+            title: item.title || "Untitled live cyber attack/phishing update",
+            link: item.link || "#",
+            pubDate: item.pubDate || item.published || new Date().toISOString(),
+            source: sourceName || "The Hacker News",
+            description: stripHtml(item.description || item.content || "No summary available."),
+            image: findImage(item)
+          };
+        }
+        function shuffleList(list) {
+          var clone = (list || []).slice();
+          for (var i = clone.length - 1; i > 0; i--) {
+            var j = Math.floor(Math.random() * (i + 1));
+            var tmp = clone[i];
+            clone[i] = clone[j];
+            clone[j] = tmp;
+          }
+          return clone;
+        }
+        function pickNewsSet(items, size) {
+          var pool = Array.isArray(items) ? items.slice() : [];
+          if (!pool.length) return [];
+          var fresh = pool.filter(function (item) {
+            return lastRenderedLinks.indexOf(item.link) === -1;
+          });
+          var source = fresh.length >= size ? fresh : pool;
+          return shuffleList(source).slice(0, size);
+        }
+        function renderCards(items) {
+          if (!items.length) {
+            newsGrid.innerHTML = '<div class="news-state">No live cyber attack/phishing stories available right now. Try refresh in a minute.</div>';
+            return;
+          }
+          newsGrid.innerHTML = items.slice(0, 3).map(function (item) {
+            var desc = item.description.length > 160 ? item.description.slice(0, 157) + "..." : item.description;
+            return [
+              '<article class="news-card">',
+              '<img class="news-image" src="' + escapeHtml(item.image) + '" alt="Threat news image" loading="lazy" referrerpolicy="no-referrer" />',
+              '<div class="news-content">',
+              '<div class="news-kicker">',
+              '<span class="news-source">' + escapeHtml(item.source) + '</span>',
+              '<span class="news-date">' + escapeHtml(formatDate(item.pubDate)) + '</span>',
+              '</div>',
+              '<h3 class="news-title"><a href="' + escapeHtml(item.link) + '" target="_blank" rel="noopener noreferrer">' + escapeHtml(item.title) + '</a></h3>',
+              '<p class="news-desc">' + escapeHtml(desc || "No summary available.") + '</p>',
+              '<a class="news-link" href="' + escapeHtml(item.link) + '" target="_blank" rel="noopener noreferrer">Read full report</a>',
+              '</div>',
+              '</article>'
+            ].join("");
+          }).join("");
+        }
+        function showLoading(message) {
+          newsGrid.innerHTML = '<div class="news-state">' + escapeHtml(message || "Loading live cyber attacks and phishing stories...") + '</div>';
+        }
+        function fetchFeed(source) {
+          var endpoint = "https://api.rss2json.com/v1/api.json?count=10&rss_url=" + encodeURIComponent(source.url);
+          return fetch(endpoint, { cache: "no-store" })
+            .then(function (res) {
+              if (!res.ok) throw new Error("Failed: " + source.name);
+              return res.json();
+            })
+            .then(function (data) {
+              if (!data || !Array.isArray(data.items)) throw new Error("Invalid payload: " + source.name);
+              return data.items.map(function (item) { return normalizeItem(item, source.name); });
+            });
+        }
+        function byMostRecent(a, b) {
+          return new Date(b.pubDate).getTime() - new Date(a.pubDate).getTime();
+        }
+        function loadThreatNews() {
+          showLoading("Loading live cyber attacks and phishing stories...");
+          updatedEl.textContent = "Fetching latest live cyber attacks and phishing stories...";
+          Promise.allSettled(SOURCE_FEEDS.map(fetchFeed))
+            .then(function (results) {
+              var combined = [];
+              results.forEach(function (result) {
+                if (result.status === "fulfilled") {
+                  combined = combined.concat(result.value || []);
+                }
+              });
+              combined = combined
+                .filter(function (item) { return item && item.title && item.link; })
+                .sort(byMostRecent);
+              var selected = pickNewsSet(combined, 3);
+              if (!selected.length) {
+                renderCards([]);
+                updatedEl.textContent = "No live cyber attack/phishing stories available from The Hacker News right now.";
+                return;
+              }
+              lastRenderedLinks = selected.map(function (item) { return item.link; });
+              renderCards(selected);
+              updatedEl.textContent = "Updated: " + formatDate(new Date().toISOString()) + " (local time)";
+            })
+            .catch(function () {
+              renderCards([]);
+              updatedEl.textContent = "The Hacker News feed is unavailable right now. Please try refresh again.";
+            });
+        }
+        refreshBtn.addEventListener("click", loadThreatNews);
+        loadThreatNews();
+      })();
+
+      (function () {
+        var supportForm = document.getElementById("support-contact-form");
+        var supportStatus = document.getElementById("support-contact-status");
+        if (!supportForm || !supportStatus) return;
+
+        // CONTACT SUPPORT BACKEND INTEGRATION (FRONTEND):
+        // 1) Keep your backend running at the same base URL used below.
+        // 2) Backend endpoint must accept: POST /api/contact with JSON { name, email, message }.
+        // 3) Backend should return:
+        //      success: { ok: true, message: "..." }
+        //      error:   { ok: false, error: "..." }
+        // 4) If this page is deployed on a different domain than backend, enable CORS on backend.
+        // 5) Create backend using the sample in `backend/server.js` and configure `.env` from `.env.example`.
+        var isLocal = ["localhost", "127.0.0.1", "::1"].indexOf(window.location.hostname) !== -1;
+        var API_BASE_URL = isLocal
+          ? "http://127.0.0.1:8000"
+          : "https://phishguard-prod-abc123.railway.app";
+        var API_ENDPOINT = API_BASE_URL + "/api/contact";
+
+        function setSupportStatus(message, type) {
+          supportStatus.textContent = message || "";
+          supportStatus.classList.remove("is-error", "is-success");
+          if (type) supportStatus.classList.add(type);
+        }
+
+        supportForm.addEventListener("submit", function (event) {
+          event.preventDefault();
+          var formData = new FormData(supportForm);
+          var payload = {
+            name: (formData.get("name") || "").toString().trim(),
+            email: (formData.get("email") || "").toString().trim(),
+            message: (formData.get("message") || "").toString().trim()
+          };
+
+          if (!payload.name || !payload.email || !payload.message) {
+            setSupportStatus("Please fill all fields before sending.", "is-error");
+            return;
+          }
+
+          var submitBtn = supportForm.querySelector('button[type="submit"], input[type="submit"]');
+          if (submitBtn) submitBtn.disabled = true;
+          setSupportStatus("Sending message...", "");
+
+          fetch(API_ENDPOINT, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload)
+          })
+            .then(function (res) {
+              return res.json().catch(function () { return {}; }).then(function (data) {
+                return { ok: res.ok, data: data };
+              });
+            })
+            .then(function (result) {
+              if (!result.ok) {
+                throw new Error(result.data && result.data.error ? result.data.error : "Failed to send message.");
+              }
+              supportForm.reset();
+              setSupportStatus("Message sent successfully.", "is-success");
+            })
+            .catch(function (err) {
+              setSupportStatus((err && err.message) || "Could not send message.", "is-error");
+            })
+            .finally(function () {
+              if (submitBtn) submitBtn.disabled = false;
+            });
+        });
+      })();
+
+      (function () {
+        var faqRoot = document.getElementById("support-faq");
+        if (!faqRoot) return;
+
+        var collapses = faqRoot.querySelectorAll(".collapse");
+        collapses.forEach(function (item) {
+          item.addEventListener("shown.bs.collapse", function () {
+            var btn = faqRoot.querySelector('[data-target="#' + item.id + '"]');
+            if (!btn) return;
+            var icon = btn.querySelector(".toggle");
+            if (icon) icon.textContent = "-";
+          });
+
+          item.addEventListener("hidden.bs.collapse", function () {
+            var btn = faqRoot.querySelector('[data-target="#' + item.id + '"]');
+            if (!btn) return;
+            var icon = btn.querySelector(".toggle");
+            if (icon) icon.textContent = "+";
+          });
+        });
+      })();
+
+      (function () {
+        var helpChatLink = document.getElementById("help-chat-link");
+        if (!helpChatLink) return;
+
+        helpChatLink.addEventListener("click", function (event) {
+          event.preventDefault();
+
+          var popupWidth = 980;
+          var popupHeight = 740;
+          var left = Math.max(0, Math.round((window.screen.width - popupWidth) / 2));
+          var top = Math.max(0, Math.round((window.screen.height - popupHeight) / 2));
+          var features = [
+            "width=" + popupWidth,
+            "height=" + popupHeight,
+            "left=" + left,
+            "top=" + top,
+            "resizable=yes",
+            "scrollbars=yes"
+          ].join(",");
+
+          var popup = window.open("chatbot.html", "phishguard_ai_chat", features);
+          if (!popup) {
+            window.location.href = "chatbot.html";
+            return;
+          }
+          popup.focus();
+        });
+      })();
+
+  </script>
+
+  <script src="js/chat-widget.js"></script>
+
+</body>
+
+</html>

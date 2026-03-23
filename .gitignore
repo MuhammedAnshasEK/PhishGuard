@@ -1,0 +1,16 @@
+# Environment secrets
+ml_backend/.env
+
+# Python
+ml_backend/venv/
+ml_backend/__pycache__/
+ml_backend/*.pyc
+ml_backend/database/__pycache__/
+
+# Model (large file)
+ml_backend/model.pkl
+ml_backend/models/
+
+# Misc
+.DS_Store
+*.log
