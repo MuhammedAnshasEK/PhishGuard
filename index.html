@@ -1949,7 +1949,7 @@
         }
 
         var isLocal = ["localhost", "127.0.0.1", "::1"].indexOf(window.location.hostname) !== -1;
-        var API_BASE = isLocal ? "http://127.0.0.1:8000" : "phishguard-do8t.onrender.com";
+        var API_BASE = isLocal ? "http://127.0.0.1:8000" : "https://phishguard-do8t.onrender.com";
 
         fetch(API_BASE + "/api/dashboard")
           .then(function (res) { return res.json(); })
@@ -1960,7 +1960,7 @@
             animateDashboard();
           })
           .catch(function () {
-            var localStats = getLocalScanStats();
+            var localStats = null;
             updateDashboardFromPayload(localStats || {
               emailChecks24h: 0, urlChecks24h: 0, threatsBlocked24h: 0,
               modelAccuracy: 94.6, cleanPct: 100,
@@ -2158,7 +2158,7 @@
         var isLocal = ["localhost", "127.0.0.1", "::1"].indexOf(window.location.hostname) !== -1;
         var API_BASE_URL = isLocal
           ? "http://127.0.0.1:8000"
-          : "phishguard-do8t.onrender.com";
+          : "https://phishguard-do8t.onrender.com";
         var API_ENDPOINT = API_BASE_URL + "/api/contact";
 
         function setSupportStatus(message, type) {

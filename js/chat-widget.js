@@ -3,7 +3,7 @@
   var isLocal = ["localhost", "127.0.0.1", "::1"].indexOf(window.location.hostname) !== -1;
   var API_ENDPOINT = (isLocal
     ? "http://127.0.0.1:8000"
-    : "phishguard-do8t.onrender.com") + "/api/chat";
+    : "https://phishguard-do8t.onrender.com") + "/api/chat";
   var SESSION_KEY = "phishguard_chat_session_id";
   var THEME_KEY = "phishguard-theme";
 

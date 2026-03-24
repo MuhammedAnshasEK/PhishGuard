@@ -619,7 +619,7 @@
         var isLocal = ["localhost", "127.0.0.1", "::1"].indexOf(window.location.hostname) !== -1;
         var apiUrl = (isLocal
           ? "http://127.0.0.1:8000"
-          : "phishguard-do8t.onrender.com") + "/api/scan";
+          : "https://phishguard-do8t.onrender.com") + "/api/scan";
 
         fetch(apiUrl, {
           method: "POST",
