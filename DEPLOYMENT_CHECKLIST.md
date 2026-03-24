@@ -48,7 +48,7 @@ background_tasks.add_task(send_email_async, name, email, message)
 // OLD - only checks "localhost"
 var API_BASE_URL = window.location.hostname === "localhost"
     ? "http://localhost:8000"
-    : "https://phishguard-prod-abc123.railway.app";
+    : "phishguard-do8t.onrender.com";
 // If user visits http://127.0.0.1:5500 → uses PRODUCTION URL ❌
 ```
 
@@ -58,7 +58,7 @@ var API_BASE_URL = window.location.hostname === "localhost"
 var isLocal = ["localhost", "127.0.0.1", "::1"].indexOf(window.location.hostname) !== -1;
 var API_BASE_URL = isLocal
     ? "http://localhost:8000"
-    : "https://phishguard-prod-abc123.railway.app";
+    : "phishguard-do8t.onrender.com";
 ```
 **Status:** ✅ FIXED in provided chatbot.html
 
